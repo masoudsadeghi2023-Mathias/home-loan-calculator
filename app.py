@@ -1,5 +1,17 @@
 import streamlit as st
 
+def inject_pwa():
+    st.markdown("""
+    <link rel="manifest" href="/manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js');
+      }
+    </script>
+    """, unsafe_allow_html=True)
+
+inject_pwa()
+
 # -----------------------------
 # توابع محاسباتی
 # -----------------------------
