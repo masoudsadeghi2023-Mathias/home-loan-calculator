@@ -2,10 +2,10 @@ import streamlit as st
 
 def inject_pwa():
     st.markdown("""
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/.streamlit/public/manifest.json">
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js');
+        navigator.serviceWorker.register('/.streamlit/public/service-worker.js');
       }
     </script>
     """, unsafe_allow_html=True)
